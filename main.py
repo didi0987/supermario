@@ -13,7 +13,7 @@ from stable_baselines3 import PPO
 # Import Base Callback for saving models
 from stable_baselines3.common.callbacks import BaseCallback
 LOG_DIR='./Logs'
-env=gym_super_mario_bros.make('SuperMarioBros-v0')
+env=gym_super_mario_bros.make('SuperMarioBros-v3')
 env=JoypadSpace(env,SIMPLE_MOVEMENT)
 env = GrayScaleObservation(env, keep_dim=True)
 # 4. Wrap inside the Dummy Environment
@@ -23,7 +23,7 @@ env = VecFrameStack(env, 4, channels_order='last')
 model = PPO('CnnPolicy', env, tensorboard_log=LOG_DIR,verbose=1,learning_rate=0.000001, 
             n_steps=512) 
 # Train the AI model, this is where the AI model starts to learn
-model.learn(total_timesteps=10000, log_interval=1)
+model.learn(total_timesteps=10000)
 model.save('testmodel2')
 '''
 done=True
