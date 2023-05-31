@@ -24,7 +24,7 @@ model = PPO('CnnPolicy', env, tensorboard_log=LOG_DIR,verbose=1,learning_rate=0.
             n_steps=512) 
 # Train the AI model, this is where the AI model starts to learn
 model.learn(total_timesteps=200000)
-model.save('testmodel2')
+model.save('testmodel3')
 '''
 done=True
 for step in range(15000):
