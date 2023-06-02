@@ -7,11 +7,8 @@ from gym_super_mario_bros.actions import RIGHT_ONLY
 from stable_baselines3 import PPO
 from random import *
 if __name__=="__main__":
-<<<<<<< HEAD
     model=PPO.load('./train/best_model_540000')
-=======
     model=PPO.load('testmodel2')
->>>>>>> a8042543655d382a2f7ec57ddd64b156c76e28dd
     env=gym_super_mario_bros.make('SuperMarioBros-v0')
     env=JoypadSpace(env,SIMPLE_MOVEMENT)
     env = GrayScaleObservation(env, keep_dim=True)
