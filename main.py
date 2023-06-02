@@ -41,13 +41,8 @@ env = VecFrameStack(env, 4, channels_order='last')
 callback = TrainAndLoggingCallback(check_freq=10000, save_path=CHECKPOINT_DIR)
 model = PPO('CnnPolicy', env, tensorboard_log=LOG_DIR,verbose=1,learning_rate=0.000001, n_steps=512) 
 # Train the AI model, this is where the AI model starts to learn
-<<<<<<< HEAD
 model.learn(total_timesteps=1000000,callback=callback)
 #model.save('testmodel2')
-=======
-model.learn(total_timesteps=200000)
-model.save('testmodel2')
->>>>>>> a8042543655d382a2f7ec57ddd64b156c76e28dd
 '''
 done=True
 for step in range(15000):
